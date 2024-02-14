@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Game</title>
+
+    <!-- daisay ui & tailwind ccs cdn link -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <!-- style css  -->
+  <link rel="stylesheet" href="style.css" />
+
+  <body class="bg-black">
+    <main
+      class="bg-[url(images/background.png)] min-h-screen bg-no-repeat bg-center"
+    >
+      <!-- play section started  -->
+      <section id="play" class="flex  justify-center items-center min-h-screen">
+        <div class="text-center">
+          <h1 class="text-[150px] anton text-white">ALPHABET CLASH</h1>
+          <p class="text-white text-2xl">
+            Unleash Your Keyboard Kung Fu : Press “Enter” to Play
+          </p>
+          <button onclick="playGame()" id="playBtn"
+            class="px-8 py-4 mt-8 rounded-lg text-black font-bold text-xl bg-white"
+          >
+            Play Now
+          </button>
+        </div>
+      </section>
+      <!-- typing section stated  -->
+      <section id="typing" class="min-h-screen hidden">
+        <div class="pt-28">
+          <div
+            class="artboard artboard-horizontal phone-6 bg-[#FFFFFFB3] mx-auto border-[15px] rounded-lg border-solid border-[#010313CC] text-center"
+          >
+            <p
+              class="inline-block bg-[#010313CC] text-white py-1 px-2 rounded-b-xl text-xl"
+            >
+              Don't watch keyboard while playing...
+            </p>
+            <div id="display"
+              class="h-[250px] text-8xl font-bold flex justify-center items-center uppercase"
+            >
+              
+            </div>
+          </div>
+          <div class="flex justify-center gap-3 my-1 w-full mt-10 ">
+            <kbd id="q" class="kbd text-3xl font-bold">q</kbd>
+            <kbd id="w" class="kbd text-3xl font-bold">w</kbd>
+            <kbd id="e" class="kbd text-3xl font-bold">e</kbd>
+            <kbd id="r" class="kbd text-3xl font-bold">r</kbd>
+            <kbd id="t" class="kbd text-3xl font-bold">t</kbd>
+            <kbd id="y" class="kbd text-3xl font-bold">y</kbd>
+            <kbd id="u" class="kbd text-3xl font-bold">u</kbd>
+            <kbd id="i" class="kbd text-3xl font-bold">i</kbd>
+            <kbd id="o" class="kbd text-3xl font-bold">o</kbd>
+            <kbd id="p" class="kbd text-3xl font-bold">p</kbd>
+          </div>
+          <div class="flex justify-center gap-3 my-1 w-full mt-4">
+            <kbd id="a" class="kbd text-3xl font-bold">a</kbd>
+            <kbd id="s" class="kbd text-3xl font-bold">s</kbd>
+            <kbd id="d" class="kbd text-3xl font-bold">d</kbd>
+            <kbd id="f" class="kbd text-3xl font-bold">f</kbd>
+            <kbd id="g" class="kbd text-3xl font-bold">g</kbd>
+            <kbd id="h" class="kbd text-3xl font-bold">h</kbd>
+            <kbd id="j" class="kbd text-3xl font-bold">j</kbd>
+            <kbd id="k" class="kbd text-3xl font-bold">k</kbd>
+            <kbd id="l" class="kbd text-3xl font-bold">l</kbd>
+          </div>
+          <div class="flex justify-center gap-3 my-1 w-full mt-4">
+            <kbd id="z" class="kbd text-3xl font-bold">z</kbd>
+            <kbd id="x" class="kbd text-3xl font-bold">x</kbd>
+            <kbd id="c" class="kbd text-3xl font-bold">c</kbd>
+            <kbd id="v" class="kbd text-3xl font-bold">v</kbd>
+            <kbd id="b" class="kbd text-3xl font-bold">b</kbd>
+            <kbd id="n" class="kbd text-3xl font-bold">n</kbd>
+            <kbd id="m" class="kbd text-3xl font-bold">m</kbd>
+            <kbd id="/" class="kbd text-3xl font-bold">/</kbd>
+          </div>
+          <div class="flex justify-between w-10/12 mx-auto">
+            <button
+              class="flex item-center gap-5 bg-[#894189] py-4 px-8 rounded-full text-white text-xl font-bold"
+            >
+              Life <img src="images/heart.svg" alt="" /> <span>1</span>
+            </button>
+            <button
+              class="flex item-center gap-5 bg-[#360490] py-4 px-8 rounded-full text-white text-xl font-bold"
+            >
+              Score <img src="images/monetization_on.svg" alt="" />
+              <span>1</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- scored section started -->
+
+      <section id="scored" class="flex justify-center items-center min-h-screen hidden">
+        <div class="w-[400px] py-6 space-y-4 bg-purple-600 text-center border-[1px] border-solid border-[#FFFFFF33] text-white rounded-lg">
+          <h1 class="text-6xl font-bold p-4">Score : 14</h1>
+          <button
+            class="px-10 py-4  rounded-lg text-black font-bold text-xl bg-white"
+          >
+            Play Now
+          </button>
+          <p class="text-2xl  ">Practice will make you Pro</p>
+        </div>
+      </section>
+
+      <!-- javaScript cdn link -->
+      <script src="scripts/index.js"></script>
+  </body>
+</html>
