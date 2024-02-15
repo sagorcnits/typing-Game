@@ -48,7 +48,11 @@ document.addEventListener("keyup", function (event) {
   } else {
     // alphaRandom();
     setTextElement("life", (lifeCount -= 1));
-    if (lifeCount <= 0) {
+
+    // validation tyiping
+
+    if (event.key === "Enter" || event.key === "Escape" || lifeCount <= 0) {
+      playGame();
       removeBgColor(display.innerText.toLowerCase());
       const typingSection = getElementId("typing");
       const gameScore = getElementId("scored");
