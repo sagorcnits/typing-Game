@@ -8,7 +8,7 @@ function playGame() {
   alphaRandom();
   setTextElement("score", 0);
   setTextElement("life", 5);
-  timing();
+  gameTyping();
 }
 
 // random alphabet function
@@ -35,31 +35,30 @@ function removeBgColor(element) {
   word.classList.remove("bg-orange-400");
 }
 
-//  key borad typing
+//key borad typing
 
-document.addEventListener("keyup", function (event) {
-  const display = getElementId("display");
-  let scoreCount = getElementIdValue("score");
-  let lifeCount = getElementIdValue("life");
-  if (display.innerText.toLowerCase() === event.key) {
-    alphaRandom();
-    removeBgColor(event.key);
-    setTextElement("score", (scoreCount += 1));
-  } else {
-    // alphaRandom();
-    setTextElement("life", (lifeCount -= 1));
-
-    // validation tyiping
-
-    if (event.key === "Enter" || event.key === "Escape" || lifeCount <= 0) {
-      playGame();
-      removeBgColor(display.innerText.toLowerCase());
-      const typingSection = getElementId("typing");
-      const gameScore = getElementId("scored");
-      const mainScore = getElementId("mainScore");
-      typingSection.classList.add("hidden");
-      gameScore.classList.remove("hidden");
-      mainScore.innerText = scoreCount;
+function gameTyping() {
+  document.addEventListener("keyup", function (event) {
+    const display = getElementId("display");
+    let scoreCount = getElementIdValue("score");
+    let lifeCount = getElementIdValue("life");
+    if (display.innerText.toLowerCase() === event.key) {
+      alphaRandom();
+      removeBgColor(event.key);
+      setTextElement("score", (scoreCount += 1));
+    } else {
+      // alphaRandom();
+      setTextElement("life", (lifeCount -= 1));
+      // validation tyiping
+      if (event.key === "Escape" || lifeCount <= 0) {
+        removeBgColor(display.innerText.toLowerCase());
+        const typingSection = getElementId("typing");
+        const gameScore = getElementId("scored");
+        const mainScore = getElementId("mainScore");
+        typingSection.classList.add("hidden");
+        gameScore.classList.remove("hidden");
+        mainScore.innerText = scoreCount;
+      }
     }
-  }
-});
+  });
+}
