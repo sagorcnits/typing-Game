@@ -53,50 +53,50 @@
               
             </div>
           </div>
-          <div class="flex justify-center gap-3 my-1 w-full mt-10 ">
-            <kbd id="q" class="kbd text-3xl font-bold">q</kbd>
-            <kbd id="w" class="kbd text-3xl font-bold">w</kbd>
-            <kbd id="e" class="kbd text-3xl font-bold">e</kbd>
-            <kbd id="r" class="kbd text-3xl font-bold">r</kbd>
-            <kbd id="t" class="kbd text-3xl font-bold">t</kbd>
-            <kbd id="y" class="kbd text-3xl font-bold">y</kbd>
-            <kbd id="u" class="kbd text-3xl font-bold">u</kbd>
-            <kbd id="i" class="kbd text-3xl font-bold">i</kbd>
-            <kbd id="o" class="kbd text-3xl font-bold">o</kbd>
-            <kbd id="p" class="kbd text-3xl font-bold">p</kbd>
+          <div class="flex justify-center gap-1 my-1 w-full mt-10 ">
+            <kbd id="q" class="kbd text-2xl font-bold">q</kbd>
+            <kbd id="w" class="kbd text-2xl font-bold">w</kbd>
+            <kbd id="e" class="kbd text-2xl font-bold">e</kbd>
+            <kbd id="r" class="kbd text-2xl font-bold">r</kbd>
+            <kbd id="t" class="kbd text-2xl font-bold">t</kbd>
+            <kbd id="y" class="kbd text-2xl font-bold">y</kbd>
+            <kbd id="u" class="kbd text-2xl font-bold">u</kbd>
+            <kbd id="i" class="kbd text-2xl font-bold">i</kbd>
+            <kbd id="o" class="kbd text-2xl font-bold">o</kbd>
+            <kbd id="p" class="kbd text-2xl font-bold">p</kbd>
           </div>
-          <div class="flex justify-center gap-3 my-1 w-full mt-4">
-            <kbd id="a" class="kbd text-3xl font-bold">a</kbd>
-            <kbd id="s" class="kbd text-3xl font-bold">s</kbd>
-            <kbd id="d" class="kbd text-3xl font-bold">d</kbd>
-            <kbd id="f" class="kbd text-3xl font-bold">f</kbd>
-            <kbd id="g" class="kbd text-3xl font-bold">g</kbd>
-            <kbd id="h" class="kbd text-3xl font-bold">h</kbd>
-            <kbd id="j" class="kbd text-3xl font-bold">j</kbd>
-            <kbd id="k" class="kbd text-3xl font-bold">k</kbd>
-            <kbd id="l" class="kbd text-3xl font-bold">l</kbd>
+          <div class="flex justify-center gap-1 my-1 w-full mt-4">
+            <kbd id="a" class="kbd text-2xl font-bold">a</kbd>
+            <kbd id="s" class="kbd text-2xl font-bold">s</kbd>
+            <kbd id="d" class="kbd text-2xl font-bold">d</kbd>
+            <kbd id="f" class="kbd text-2xl font-bold">f</kbd>
+            <kbd id="g" class="kbd text-2xl font-bold">g</kbd>
+            <kbd id="h" class="kbd text-2xl font-bold">h</kbd>
+            <kbd id="j" class="kbd text-2xl font-bold">j</kbd>
+            <kbd id="k" class="kbd text-2xl font-bold">k</kbd>
+            <kbd id="l" class="kbd text-2xl font-bold">l</kbd>
           </div>
-          <div class="flex justify-center gap-3 my-1 w-full mt-4">
-            <kbd id="z" class="kbd text-3xl font-bold">z</kbd>
-            <kbd id="x" class="kbd text-3xl font-bold">x</kbd>
-            <kbd id="c" class="kbd text-3xl font-bold">c</kbd>
-            <kbd id="v" class="kbd text-3xl font-bold">v</kbd>
-            <kbd id="b" class="kbd text-3xl font-bold">b</kbd>
-            <kbd id="n" class="kbd text-3xl font-bold">n</kbd>
-            <kbd id="m" class="kbd text-3xl font-bold">m</kbd>
-            <kbd id="/" class="kbd text-3xl font-bold">/</kbd>
+          <div class="flex justify-center gap-1 my-1 w-full mt-4">
+            <kbd id="z" class="kbd text-2xl font-bold">z</kbd>
+            <kbd id="x" class="kbd text-2xl font-bold">x</kbd>
+            <kbd id="c" class="kbd text-2xl font-bold">c</kbd>
+            <kbd id="v" class="kbd text-2xl font-bold">v</kbd>
+            <kbd id="b" class="kbd text-2xl font-bold">b</kbd>
+            <kbd id="n" class="kbd text-2xl font-bold">n</kbd>
+            <kbd id="m" class="kbd text-2xl font-bold">m</kbd>
+            <kbd id="/" class="kbd text-2xl font-bold">/</kbd>
           </div>
           <div class="flex justify-between w-10/12 mx-auto">
             <button
               class="flex item-center gap-5 bg-[#894189] py-4 px-8 rounded-full text-white text-xl font-bold"
             >
-              Life <img src="images/heart.svg" alt="" /> <span>1</span>
+              Life <img src="images/heart.svg" alt="" /> <span id="life">5</span>
             </button>
             <button
               class="flex item-center gap-5 bg-[#360490] py-4 px-8 rounded-full text-white text-xl font-bold"
             >
               Score <img src="images/monetization_on.svg" alt="" />
-              <span>1</span>
+              <span id="score">0</span>
             </button>
           </div>
         </div>
@@ -105,8 +105,11 @@
 
       <section id="scored" class="flex justify-center items-center min-h-screen hidden">
         <div class="w-[400px] py-6 space-y-4 bg-purple-600 text-center border-[1px] border-solid border-[#FFFFFF33] text-white rounded-lg">
-          <h1 class="text-6xl font-bold p-4">Score : 14</h1>
-          <button
+          <h3 class="text-6xl font-bold">
+           Game Over
+          </h3>
+          <h1 class="text-6xl font-bold p-4">Score : <span id="mainScore">0</span></h1>
+          <button onclick="playGame()"
             class="px-10 py-4  rounded-lg text-black font-bold text-xl bg-white"
           >
             Play Now
@@ -114,8 +117,9 @@
           <p class="text-2xl  ">Practice will make you Pro</p>
         </div>
       </section>
-
+     
       <!-- javaScript cdn link -->
+      <script src="scripts/utility.js"></script>
       <script src="scripts/index.js"></script>
   </body>
 </html>
