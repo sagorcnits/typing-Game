@@ -8,7 +8,6 @@ function playGame() {
   alphaRandom();
   setTextElement("score", 0);
   setTextElement("life", 5);
-  gameTyping();
 }
 
 // random alphabet function
@@ -29,6 +28,7 @@ function wordColor(element) {
   const word = getElementId(element);
   word.classList.add("bg-orange-400");
 }
+
 // remove bg color
 function removeBgColor(element) {
   const word = getElementId(element);
@@ -37,28 +37,25 @@ function removeBgColor(element) {
 
 //key borad typing
 
-function gameTyping() {
-  document.addEventListener("keyup", function (event) {
-    const display = getElementId("display");
-    let scoreCount = getElementIdValue("score");
-    let lifeCount = getElementIdValue("life");
-    if (display.innerText.toLowerCase() === event.key) {
-      alphaRandom();
-      removeBgColor(event.key);
-      setTextElement("score", (scoreCount += 1));
-    } else {
-      // alphaRandom();
-      setTextElement("life", (lifeCount -= 1));
-      // validation tyiping
-      if (event.key === "Escape" || lifeCount <= 0) {
-        removeBgColor(display.innerText.toLowerCase());
-        const typingSection = getElementId("typing");
-        const gameScore = getElementId("scored");
-        const mainScore = getElementId("mainScore");
-        typingSection.classList.add("hidden");
-        gameScore.classList.remove("hidden");
-        mainScore.innerText = scoreCount;
-      }
+document.addEventListener("keyup", function (event) {
+  const display = getElementId("display");
+  let scoreCount = getElementIdValue("score");
+  let lifeCount = getElementIdValue("life");
+  if (display.innerText.toLowerCase() === event.key) {
+    alphaRandom();
+    removeBgColor(event.key);
+    setTextElement("score", (scoreCount += 1));
+  } else {
+    setTextElement("life", (lifeCount -= 1));
+    // validation tyiping
+    if (event.key === "Escape" || lifeCount <= 0) {
+      removeBgColor(display.innerText.toLowerCase());
+      const typingSection = getElementId("typing");
+      const gameScore = getElementId("scored");
+      const mainScore = getElementId("mainScore");
+      typingSection.classList.add("hidden");
+      gameScore.classList.remove("hidden");
+      mainScore.innerText = scoreCount;
     }
-  });
-}
+  }
+});
